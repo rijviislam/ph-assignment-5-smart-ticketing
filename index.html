@@ -24,11 +24,14 @@
       .font_two {
         font-family: "Raleway", sans-serif;
       }
+      .primary_color {
+        color: #1dd100;
+      }
     </style>
   </head>
-  <body>
-    <!-- <h1 class="text-red-700">Connected!</h1> -->
-    <header>
+  <body class="flex flex-col justify-center items-center">
+    <!-- HEADER SECTION  -->
+    <header class="w-[1171px] mt-[48px]">
       <div class="navbar bg-base-100">
         <div class="navbar-start">
           <div class="dropdown">
@@ -50,7 +53,7 @@
             </div>
             <ul
               tabindex="0"
-              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 rounded-box w-52"
             >
               <li><a>Home</a></li>
               <li><a>About</a></li>
@@ -61,37 +64,104 @@
           <a class="btn btn-ghost text-xl">P-Ticket</a>
         </div>
         <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
-            <li><a>Home</a></li>
-            <li><a>About</a></li>
-            <li><a>Destination</a></li>
-            <li><a>Search</a></li>
+          <ul class="flex gap-14 px-1">
+            <li class="cursor-pointer text-[#030712b3] font-medium text-lg">
+              <a>Home</a>
+            </li>
+            <li class="cursor-pointer text-[#030712b3] font-medium text-lg">
+              <a>About</a>
+            </li>
+            <li class="cursor-pointer text-[#030712b3] font-medium text-lg">
+              <a>Destination</a>
+            </li>
+            <li class="cursor-pointer text-[#030712b3] font-medium text-lg">
+              <a>Search</a>
+            </li>
           </ul>
         </div>
         <div class="navbar-end">
-          <a class="btn">Bus <img src="./assets/bus-icon.png" alt="" /></a>
+          <a
+            class="btn text-[#1DD100] font-bold text-xl flex justify-center items-center border border-[#1dd10066]"
+            >Bus
+            <img
+              class="w-[24px] h-[24px] object-contain"
+              src="./assets/bus-icon.png"
+              alt=""
+          /></a>
         </div>
       </div>
     </header>
     <main>
       <!-- BANNER SECTION  -->
-      <section class="">
+      <section class="w-[1171px] mt-[30px] rounded-[32px] relative">
         <div
-          class="hero min-h-screen"
+          class="min-h-[550px] rounded-[32px] flex flex-col justify-center items-center"
           style="background-image: url(./assets/banner.png)"
         >
           <div class="hero-overlay bg-opacity-60"></div>
-          <div class="hero-content text-center text-neutral-content">
-            <div class="max-w-md">
-              <h1 class="mb-5 text-5xl font-bold">
-                End-to-End Travel with P Paribahan
+          <div class="hero-content text-neutral-content">
+            <div class="flex flex-col justify-center items-center">
+              <h1
+                class="text-[64px] font-bold lg:w-[742px] text-center flex flex-col"
+              >
+                End-to-End Travel with
+                <span class="text-[#1DD100]">P Paribahan</span>
               </h1>
-              <p class="mb-5">
+              <p class="mb-8 mt-4 lg:w-[691px] text-center text-lg font-normal">
                 Yes, you can run unit tests and view the results directly within
                 the app. The integrated testing features allow for a streamlined
                 .
               </p>
-              <button class="btn bg-[#1DD100] border-none">Buy Tickets</button>
+              <button
+                class="btn bg-[#1DD100] border-none text-xl font-bold px-[30px]"
+              >
+                Buy Tickets
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- BANNER CARD CONTAINER -->
+
+        <div
+          class="w-full absolute top-[481px] flex justify-center items-center gap-[23px]"
+        >
+          <div
+            class="w-[308px] h-[138px] border-b-[3px] border-[#1DD100] rounded-3xl flex items-center justify-center gap-4 bg-[#FFF] cursor-pointer"
+          >
+            <img class="w-[64px] h-[64px]" src="./assets/people.png" alt="" />
+            <div class="flex flex-col gap-2">
+              <h1 class="text-4xl font-bold text-[#030712] font_one">500K+</h1>
+              <p class="font-normal text-lg text-[#03071299] font_one">
+                Registered users
+              </p>
+            </div>
+          </div>
+          <div
+            class="w-[308px] h-[138px] border-b-[3px] border-[#1DD100] rounded-3xl flex items-center justify-center gap-4 bg-[#FFF] cursor-pointer"
+          >
+            <img
+              class="w-[64px] h-[64px]"
+              src="./assets/ticket-cupon.png"
+              alt=""
+            />
+            <div class="flex flex-col gap-2">
+              <h1 class="text-4xl font-bold text-[#030712] font_one">
+                1.7 lacks
+              </h1>
+              <p class="font-normal text-lg text-[#03071299] font_one">
+                Tickets sold
+              </p>
+            </div>
+          </div>
+          <div
+            class="w-[308px] h-[138px] border-b-[3px] border-[#1DD100] rounded-3xl flex items-center justify-center gap-4 bg-[#FFF] cursor-pointer"
+          >
+            <img class="w-[64px] h-[64px]" src="./assets/stoppage.png" alt="" />
+            <div class="flex flex-col gap-2">
+              <h1 class="text-4xl font-bold text-[#030712] font_one">80K+</h1>
+              <p class="font-normal text-lg text-[#03071299] font_one">
+                Rental partners
+              </p>
             </div>
           </div>
         </div>
