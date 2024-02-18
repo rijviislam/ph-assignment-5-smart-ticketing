@@ -49,6 +49,14 @@
         margin-left: 84px;
         margin-right: 114px;
       }
+      .banner_bg {
+        background: linear-gradient(
+            180deg,
+            rgba(3, 7, 18, 0.5) 0%,
+            rgba(3, 7, 18, 0) 100%
+          ),
+          url(<path-to-image>), lightgray 50% / cover no-repeat;
+      }
     </style>
   </head>
   <body class="w-full flex flex-col justify-center items-center">
@@ -115,37 +123,30 @@
     </header>
     <main class="w-full flex flex-col items-center justify-center">
       <!-- BANNER SECTION  -->
-      <section class="w-[1171px] mt-[30px] rounded-[32px] relative">
+      <section class="w-[1171px] h-[619px] mt-[30px] rounded-[32px] relative">
+        <!-- BANNER CARD CONTAINER -->
         <div
-          class="min-h-[550px] rounded-[32px] flex flex-col justify-center items-center"
-          style="background-image: url(./assets/banner.png)"
+          class="h-[550px] w-full rounded-[32px] flex items-center justify-center banner_bg"
         >
-          <div class="hero-overlay bg-opacity-60"></div>
-          <div class="hero-content text-neutral-content">
-            <div class="flex flex-col justify-center items-center">
-              <h1
-                class="text-[64px] font-bold lg:w-[742px] text-center flex flex-col"
-              >
-                End-to-End Travel with
-                <span class="text-[#1DD100]">P Paribahan</span>
-              </h1>
-              <p class="mb-8 mt-4 lg:w-[691px] text-center text-lg font-normal">
-                Yes, you can run unit tests and view the results directly within
-                the app. The integrated testing features allow for a streamlined
-                .
-              </p>
-
-              <a
-                href="#paribahan"
-                class="bg-[#1DD100] py-[21px] border-none text-xl font-bold rounded-xl px-[30px]"
-              >
-                Buy Tickets</a
-              >
-            </div>
+          <img src="./assets/banner.png" alt="" />
+          <div class="absolute top-[70px] text-center">
+            <h1 class="font_two text-[64px] font-extrabold text-[#FFF]">
+              End-to-End Travel with <br />
+              <span class="text-[#1DD100]">P Paribahan</span>
+            </h1>
+            <p class="mt-4 mb-8 text-[#FFF] font_one font-normal text-lg">
+              Yes, you can run unit tests and view the results directly within
+              the app. The <br />
+              integrated testing features allow for a streamlined .
+            </p>
+            <a
+              href="#paribahan"
+              class="px-[30px] py-[21px] text-[#030712] font-bold text-xl font_two bg-[#1DD100] rounded-xl"
+            >
+              Buy Tickets
+            </a>
           </div>
         </div>
-        <!-- BANNER CARD CONTAINER -->
-
         <div
           class="w-full absolute top-[481px] flex justify-center items-center gap-[23px]"
         >
@@ -938,7 +939,6 @@
       </section>
     </main>
     <!-- FOOTER SECTION  -->
-
     <footer
       class="w-full h-[457px] p-10 bg-base-300 flex flex-col text-base-content bg-[#030712] py-[120px] px-[135px]"
     >
