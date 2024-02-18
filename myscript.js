@@ -1,11 +1,12 @@
 console.log("connected!");
-let seatArr = [];
 let availableSeats = document.getElementById("availableSeat").innerText;
 let totalavailableSeats = parseInt(availableSeats);
 let countSeats = document.getElementById("countSeat").innerText;
 let totalCountedSeats = parseInt(countSeats);
 const input = document.getElementById("inp");
 const applyBtn = document.getElementById("apply");
+
+// coupon //
 
 function setSeatBgColor(seatId) {
   const seat = document.getElementById(seatId);
@@ -18,84 +19,82 @@ function setTextColor(eId) {
   settext.classList.add("setTextColor");
 }
 
-const seatPlan = document.getElementsByClassName("kbd");
-
+const seatPlan = document.querySelectorAll(".kbd");
+let buttonCounter = 0;
 for (const eachSeat of seatPlan) {
   eachSeat.addEventListener("click", () => {
-    const getSeatId = eachSeat.innerText;
-    setSeatBgColor(getSeatId);
-    setTextColor(getSeatId);
-    console.log(getSeatId);
-    document.getElementById("availableSeat").innerText =
-      totalavailableSeats -= 1;
-    document.getElementById("countSeat").innerText = totalCountedSeats += 1;
+    buttonCounter++;
+    if (buttonCounter <= 4) {
+      const getSeatId = eachSeat.innerText;
+      setSeatBgColor(getSeatId);
+      setTextColor(getSeatId);
 
-    const seatTitile = document.getElementById("seatTitle");
+      document.getElementById("availableSeat").innerText =
+        totalavailableSeats -= 1;
+      document.getElementById("countSeat").innerText = totalCountedSeats += 1;
+      eachSeat.setAttribute("disabled", "true");
+      const seatTitile = document.getElementById("seatTitle");
+      const div = document.createElement("div");
+      div.classList.add("seat_flex");
+      seatTitile.appendChild(div);
+      const p1 = document.createElement("p");
+      p1.innerText = getSeatId;
+      div.appendChild(p1);
+      const p2 = document.createElement("p");
+      p2.innerText = "Economoy";
+      p2.classList.add("economoy");
+      div.appendChild(p2);
+      const p3 = document.createElement("p");
+      p3.innerText = "550";
+      div.appendChild(p3);
 
-    eachSeat.setAttribute("disabled", "true");
+      let ticketTotal = document.getElementById("totalPrice");
+      let ticketPrice = ticketTotal.innerText;
+      let totalTicketFare = parseInt(ticketPrice);
+      totalTicketFare += 550;
+      ticketTotal.innerText = totalTicketFare;
 
-    const div = document.createElement("div");
+      const grandTotalPriceSeat = document.getElementById("grandTotal");
+      let granPrice = grandTotalPriceSeat.innerText;
+      let grandTotalFear = parseInt(granPrice);
+      grandTotalFear += 550;
+      grandTotalPriceSeat.innerText = grandTotalFear;
 
-    div.classList.add("seat_flex");
-    seatTitile.appendChild(div);
-    const p1 = document.createElement("p");
-    p1.innerText = getSeatId;
-    div.appendChild(p1);
-    const p2 = document.createElement("p");
-    p2.innerText = "Economoy";
-    p2.classList.add("economoy");
-    div.appendChild(p2);
-    const p3 = document.createElement("p");
-    p3.innerText = "550";
-    div.appendChild(p3);
+      //   COUPON CODE //
 
-    let ticketTotal = document.getElementById("totalPrice");
-    let ticketPrice = ticketTotal.innerText;
-    let totalTicketFare = parseInt(ticketPrice);
-    totalTicketFare += 550;
-    ticketTotal.innerText = totalTicketFare;
+
+    } else {
+      return alert("You only select up to 4 seat");
+    }
   });
 }
 
+
 applyBtn.addEventListener("click", () => {
-  const inputValue = input.value;
-  const totalTicketPrice = document.getElementById("totalPrice").innerText;
-  const totalTicketFare = parseInt(totalTicketPrice);
-  const grandTotalPrice = document.getElementById("grandTotal");
-  const inputApply = document.getElementById("inpApply");
-  console.log(totalTicketFare);
+    if (buttonCounter >= 4) {
+      const inputValue = input.value;
+      const totalTicketPrice =
+        document.getElementById("totalPrice").innerText;
+      const totalTicketFare = parseInt(totalTicketPrice);
+      const grandTotalPrice = document.getElementById("grandTotal");
+      const inputApply = document.getElementById("inpApply");
 
-  //   NEW 15 DISCOUNT CALCULATION //
-  if (inputValue === "New15") {
-    if (totalTicketFare >= 550) {
-      const discountPrice = totalTicketFare * 0.15;
-      const totalGrandPrice = totalTicketFare - discountPrice;
-      grandTotalPrice.innerText = totalGrandPrice;
-      inputApply.classList.add("hidden");
+      //   NEW 15 DISCOUNT CALCULATION //
+      if (inputValue === "New15") {
+        const discountPrice = totalTicketFare * 0.15;
+        const totalGrandPrice = totalTicketFare - discountPrice;
+        grandTotalPrice.innerText = totalGrandPrice;
+        inputApply.classList.add("hidden");
+      } else if (inputValue === "Couple 20") {
+        const discountPrice = totalTicketFare * 0.2;
+        const totalGrandPrice = totalTicketFare - discountPrice;
+        grandTotalPrice.innerText = totalGrandPrice;
+        inputApply.classList.add("hidden");
+        //   COUPLE 20 DISCOUNT CALCULATION //
+      } else {
+        return alert("invalid coupon code!");
+      }
     } else {
-      return alert(
-        "Please purchease your ticket then you will get a discount!"
-      );
+      return alert("you need to select 4 seat");
     }
-    console.log(totalTicketFare);
-  } else if (inputValue === "Couple 20") {
-    if (totalTicketFare >= 550) {
-      const discountPrice = totalTicketFare * 0.15;
-      const totalGrandPrice = totalTicketFare - discountPrice;
-      grandTotalPrice.innerText = totalGrandPrice;
-      inputApply.classList.add("hidden");
-    } else {
-      return alert(
-        "Please purchease your ticket then you will get a discount!"
-      );
-    }
-
-    //   COUPLE 20 DISCOUNT CALCULATION //
-
-    console.log(totalTicketFare);
-  } else {
-    return alert("invalid coupon code!");
-  }
-
-  //   console.log(inputValue);
-});
+  });
