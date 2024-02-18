@@ -61,40 +61,50 @@ for (const eachSeat of seatPlan) {
       grandTotalPriceSeat.innerText = grandTotalFear;
 
       //   COUPON CODE //
-
-
     } else {
       return alert("You only select up to 4 seat");
     }
   });
 }
 
-
 applyBtn.addEventListener("click", () => {
-    if (buttonCounter >= 4) {
-      const inputValue = input.value;
-      const totalTicketPrice =
-        document.getElementById("totalPrice").innerText;
-      const totalTicketFare = parseInt(totalTicketPrice);
-      const grandTotalPrice = document.getElementById("grandTotal");
-      const inputApply = document.getElementById("inpApply");
+  if (buttonCounter >= 4) {
+    const inputValue = input.value;
+    const totalTicketPrice = document.getElementById("totalPrice").innerText;
+    const totalTicketFare = parseInt(totalTicketPrice);
+    const grandTotalPrice = document.getElementById("grandTotal");
+    const inputApply = document.getElementById("inpApply");
 
-      //   NEW 15 DISCOUNT CALCULATION //
-      if (inputValue === "New15") {
-        const discountPrice = totalTicketFare * 0.15;
-        const totalGrandPrice = totalTicketFare - discountPrice;
-        grandTotalPrice.innerText = totalGrandPrice;
-        inputApply.classList.add("hidden");
-      } else if (inputValue === "Couple 20") {
-        const discountPrice = totalTicketFare * 0.2;
-        const totalGrandPrice = totalTicketFare - discountPrice;
-        grandTotalPrice.innerText = totalGrandPrice;
-        inputApply.classList.add("hidden");
-        //   COUPLE 20 DISCOUNT CALCULATION //
-      } else {
-        return alert("invalid coupon code!");
-      }
+    //   NEW 15 DISCOUNT CALCULATION //
+    if (inputValue === "New15") {
+      const discountPrice = totalTicketFare * 0.15;
+      const totalGrandPrice = totalTicketFare - discountPrice;
+      grandTotalPrice.innerText = totalGrandPrice;
+      inputApply.classList.add("hidden");
+    } else if (inputValue === "Couple 20") {
+      const discountPrice = totalTicketFare * 0.2;
+      const totalGrandPrice = totalTicketFare - discountPrice;
+      grandTotalPrice.innerText = totalGrandPrice;
+      inputApply.classList.add("hidden");
+      //   COUPLE 20 DISCOUNT CALCULATION //
     } else {
-      return alert("you need to select 4 seat");
+      return alert("invalid coupon code!");
     }
-  });
+  } else {
+    return alert("you need to select 4 seat");
+  }
+});
+
+const inputNum = document.getElementById("phone");
+
+const inputButton = document.getElementById("inputButton");
+
+function handleInput() {
+  const inputNumVal = inputNum.value;
+  if (inputNumVal.length == 11) {
+    my_modal_5.showModal();
+  } else {
+    return alert("Invalid Phone Number");
+  }
+
+}

@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -23,6 +23,9 @@
       }
       .font_two {
         font-family: "Raleway", sans-serif;
+      }
+      .font_three {
+        font-family: "Roboto", sans-serif;
       }
       .primary_color {
         color: #1dd100;
@@ -855,8 +858,9 @@
                   >Phone Number*</label
                 >
                 <input
+                  id="phone"
                   class="bg-white border text-[#03071266] text-base font-normal border-[#0307121a] rounded-xl px-6 py-6 outline-none"
-                  type="text"
+                  type="number"
                   placeholder="Enter your phone number"
                 />
               </div>
@@ -873,6 +877,8 @@
                 />
               </div>
               <button
+                id="inputButton"
+                onclick="handleInput()"
                 class="px-[30px] py-[21px] w-full text-white bg-[#1DD100] font_two text-xl font-extrabold rounded-2xl"
               >
                 Next
@@ -881,18 +887,98 @@
             <!-- terms and condition and policy -->
 
             <div class="flex gap-11 mt-6 justify-center items-center">
-              <p class="text-base font_one font-normal underline">
+              <p
+                class="text-base font_one font-normal underline cursor-pointer"
+              >
                 Terms and Conditions
               </p>
-              <p class="text-base font_one font-normal underline">
+              <p
+                class="text-base font_one font-normal underline cursor-pointer"
+              >
                 Cancellation Policy
               </p>
             </div>
           </div>
         </div>
       </section>
-      <!-- FOOTER SECTION  -->
+      <!-- MODAL SECTION  -->
+      <section>
+        <!-- Open the modal using ID.showModal() method -->
+
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+          <div
+            class="w-[718px] h-[481px] flex flex-col items-center justify-center bg-white rounded-2xl"
+          >
+            <img src="./assets/success.png" alt="" />
+            <h3 class="font-bold text-lg text-[#27AE60] font_three mt-[38px]">
+              SUCCESS
+            </h3>
+            <p
+              class="py-4 text-xl font-light text-[#4A4A4A] font_three flex flex-col items-center justify-center text-center leading-[26px]"
+            >
+              <strong
+                class="text-[#4A4A4A] text-xl font-medium font_three text-center mb-2"
+                >Thank you for Booking Our Bus Seats. <br />
+                We are working hard to find the best service and deals for you.
+              </strong>
+              Shortly you will find a confirmation in your email.
+            </p>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button
+                  class="bg-[#27AE60] text-white rounded-[32px] px-[104px] py-[15px] text-xl font-semibold font_three"
+                >
+                  Continue
+                </button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </section>
     </main>
+    <!-- FOOTER SECTION  -->
+
+    <footer
+      class="w-full h-[457px] p-10 bg-base-300 flex flex-col text-base-content bg-[#030712] py-[120px] px-[135px]"
+    >
+      <div class="flex justify-between items-center">
+        <nav class="flex gap-4 flex-col">
+          <h6 class="footer-title font-extrabold text-4xl font_two text-white">
+            P-Ticket
+          </h6>
+          <div class="font-normal text-lg text-[#ffffffcc]">
+            P-Ticket is a digital platform to make your <br />
+            daily commuting better.
+          </div>
+        </nav>
+        <nav class="flex gap-5 flex-col">
+          <h6 class="text-xl font-semibold font_two text-[#FFF]">
+            Download our app
+          </h6>
+          <img src="./assets/Group 104 (1).svg" alt="" />
+        </nav>
+      </div>
+      <div
+        class="h-[1px] border border-dashed border-[#FFFFFF4D] mt-[67px] mb-[32px]"
+      ></div>
+      <div class="flex justify-between">
+        <p class="text-[#FFFFFFB2] font-normal text-sm font_one">
+          @all rights reserved, P-Ticket services limited.2024
+        </p>
+        <div class="flex items-center gap-8">
+          <p class="text-base font-medium font_one text-[#FFF]">
+            Terms & condition
+          </p>
+          <p class="text-base font-medium font_one text-[#FFF]">
+            Return & refund policy
+          </p>
+          <p class="text-base font-medium font_one text-[#FFF]">
+            Privacy policy
+          </p>
+        </div>
+      </div>
+    </footer>
     <script src="./myscript.js"></script>
   </body>
 </html>
