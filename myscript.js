@@ -95,12 +95,18 @@ const inputNum = document.getElementById("phone");
 
 const inputButton = document.getElementById("inputButton");
 
-function handleInput() {
-  const inputNumVal = inputNum.value;
-  if (inputNumVal.length == 11) {
-    my_modal_5.showModal();
-  } else {
-    return alert("Invalid Phone Number");
-  }
 
-}
+
+  function handleInput() {
+    if(buttonCounter >= 1) {
+      const inputNumVal = inputNum.value;
+    if (inputNumVal.length == 11) {
+      my_modal_5.showModal();
+    } else {
+      return alert("Invalid Phone Number");
+    }
+    }else {
+      return alert("you neet to select one seat");
+    }
+  
+  }
