@@ -6,7 +6,6 @@ let totalCountedSeats = parseInt(countSeats);
 const input = document.getElementById("inp");
 const applyBtn = document.getElementById("apply");
 
-
 function setSeatBgColor(seatId) {
   const seat = document.getElementById(seatId);
   seat.classList.add("seat_bg");
@@ -58,7 +57,6 @@ for (const eachSeat of seatPlan) {
       let grandTotalFear = parseInt(granPrice);
       grandTotalFear += 550;
       grandTotalPriceSeat.innerText = grandTotalFear;
-
     } else {
       return alert("You only select up to 4 seat");
     }
@@ -91,22 +89,27 @@ applyBtn.addEventListener("click", () => {
   }
 });
 
+const inputName = document.getElementById("inputName");
 const inputNum = document.getElementById("phone");
+const inputEmail = document.getElementById("inputEmail");
 
 const inputButton = document.getElementById("inputButton");
 
-
-
-  function handleInput() {
-    if(buttonCounter >= 1) {
-      const inputNumVal = inputNum.value;
+function handleInput() {
+  if (buttonCounter >= 1) {
+    const inputNumVal = inputNum.value;
     if (inputNumVal.length == 11) {
       my_modal_5.showModal();
+      inputName.value = "";
+      inputNum.value = "";
+      inputEmail.value = "";
+      inputButton.classList.remove("bg-[#1DD100]");
+      inputButton.classList.add("disabled");
+      inputButton.setAttribute("disabled", "true");
     } else {
       return alert("Invalid Phone Number");
     }
-    }else {
-      return alert("you neet to select one seat");
-    }
-  
+  } else {
+    return alert("you neet to select one seat");
   }
+}

@@ -49,6 +49,9 @@
         margin-left: 84px;
         margin-right: 114px;
       }
+      .disabled {
+        background-color: gray;
+      }
       .banner_bg {
         background: linear-gradient(
             180deg,
@@ -129,6 +132,7 @@
         </div>
       </div>
     </header>
+    <!-- MAIN SECTION  -->
     <main class="w-full flex flex-col items-center justify-center">
       <!-- BANNER SECTION  -->
       <section class="w-[1171px] h-[619px] mt-[30px] rounded-[32px] relative">
@@ -204,9 +208,9 @@
         <h1 class="font_two text-[40px] font-bold text-[#030712] lg:mb-12">
           Best offers for you
         </h1>
-        <div class="flex gap-6">
+        <div class="flex items-center justify-center">
           <div
-            class="bg-[#FFBF0F] lg:w-[573px] lg:-[220px] flex justify-center items-center rounded-3xl"
+            class="bg-[#FFBF0F] lg:w-[573px] lg:-[220px] flex justify-center items-center rounded-3xl mr-3"
           >
             <div>
               <h1 class="text-[#030712cc] text-[40px] font-black font_one">
@@ -234,7 +238,7 @@
             </div>
           </div>
           <div
-            class="bg-[#F78C9C] lg:w-[573px] lg:-[220px] flex justify-center items-center rounded-3xl"
+            class="bg-[#F78C9C] lg:w-[573px] lg:-[220px] flex justify-center items-center rounded-3xl ml-3"
           >
             <div>
               <h1 class="text-[#030712cc] text-[40px] font-black font_one">
@@ -284,9 +288,9 @@
           app. The integrated <br />
           testing features allow for a streamlined .
         </p>
-        <!-- PARUBAHAN CARD  -->
+        <!-- PARIBAHAN CARD  -->
         <div
-          class="flex items-center justify-center bg-white lg:pl-8 pr-[63px] mt-[47px] mb-6 rounded-3xl"
+          class="w-[1170px] flex items-center justify-center bg-white lg:pl-8 pr-[53px] mt-[47px] mb-6 rounded-3xl"
         >
           <div class="w-[808px]">
             <div class="flex justify-between w-[808px]">
@@ -350,14 +354,12 @@
               </div>
             </div>
           </div>
-          <img
-            class="ml-[72px] mr-[62px]"
-            src="./assets/info-devider.png"
-            alt=""
-          />
+          <img class="pl-8 pr-[22px]" src="./assets/info-devider.png" alt="" />
           <div class="flex flex-col justify-center items-center">
             <img src="./assets/fare.png" alt="" />
-            <h1 class="text-[#030712] font-bold text-[32px] font_two">
+            <h1
+              class="text-[#030712] w-[140px] font-bold text-[32px] font_two mt-6"
+            >
               550 Taka
             </h1>
             <p class="text-[#03071299] font_two text-2xl font-semibold">
@@ -855,6 +857,7 @@
                   >Passenger Name*</label
                 >
                 <input
+                  id="inputName"
                   class="bg-white border text-[#03071266] text-base font-normal border-[#0307121a] rounded-xl px-6 py-6 outline-none"
                   type="text"
                   placeholder="Enter your name"
@@ -880,6 +883,7 @@
                   >Email ID</label
                 >
                 <input
+                  id="inputEmail"
                   class="bg-white border text-[#03071266] text-base font-normal border-[#0307121a] rounded-xl px-6 py-6 outline-none"
                   type="text"
                   placeholder="Enter your email id"
