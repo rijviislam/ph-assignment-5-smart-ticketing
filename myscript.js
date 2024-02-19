@@ -85,6 +85,7 @@ applyBtn.addEventListener("click", () => {
       return alert("invalid coupon code!");
     }
   } else {
+    input.value = "";
     return alert("you need to select 4 seat");
   }
 });
