@@ -6,7 +6,6 @@ let totalCountedSeats = parseInt(countSeats);
 const input = document.getElementById("inp");
 const applyBtn = document.getElementById("apply");
 
-// coupon //
 
 function setSeatBgColor(seatId) {
   const seat = document.getElementById(seatId);
@@ -60,7 +59,6 @@ for (const eachSeat of seatPlan) {
       grandTotalFear += 550;
       grandTotalPriceSeat.innerText = grandTotalFear;
 
-      //   COUPON CODE //
     } else {
       return alert("You only select up to 4 seat");
     }
@@ -75,7 +73,6 @@ applyBtn.addEventListener("click", () => {
     const grandTotalPrice = document.getElementById("grandTotal");
     const inputApply = document.getElementById("inpApply");
 
-    //   NEW 15 DISCOUNT CALCULATION //
     if (inputValue === "New15") {
       const discountPrice = totalTicketFare * 0.15;
       const totalGrandPrice = totalTicketFare - discountPrice;
@@ -86,7 +83,6 @@ applyBtn.addEventListener("click", () => {
       const totalGrandPrice = totalTicketFare - discountPrice;
       grandTotalPrice.innerText = totalGrandPrice;
       inputApply.classList.add("hidden");
-      //   COUPLE 20 DISCOUNT CALCULATION //
     } else {
       return alert("invalid coupon code!");
     }
