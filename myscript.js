@@ -82,11 +82,11 @@ applyBtn.addEventListener("click", () => {
       grandTotalPrice.innerText = totalGrandPrice;
       inputApply.classList.add("hidden");
     } else {
-      return alert("invalid coupon code!");
+      return alert("Invalid coupon code");
     }
   } else {
     input.value = "";
-    return alert("you need to select 4 seat");
+    return alert("You need to select 4 seat");
   }
 });
 
@@ -111,6 +111,6 @@ function handleInput() {
       return alert("Invalid Phone Number");
     }
   } else {
-    return alert("you neet to select one seat");
+    return alert("You neet to select one seat");
   }
 }
