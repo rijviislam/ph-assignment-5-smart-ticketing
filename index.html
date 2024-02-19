@@ -94,7 +94,11 @@
               <li><a>Search</a></li>
             </ul>
           </div>
-          <a class="text-4xl font_two font-extrabold text-[#030712]">FlixBus</a>
+          <a
+            id="flixBus"
+            class="text-4xl font_two font-extrabold text-[#030712] cursor-pointer"
+            >FlixBus</a
+          >
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="flex gap-14 px-1">
@@ -153,7 +157,7 @@
             </p>
             <a
               href="#paribahan"
-              class="px-[30px] py-[21px] text-[#030712] font-bold text-xl font_two bg-[#1DD100] rounded-xl"
+              class="px-[30px] py-[21px] text-[#030712] font-bold text-xl font_two bg-[#1DD100] rounded-xl hover:bg-[#5bda47] transition"
             >
               Buy Tickets
             </a>
@@ -268,7 +272,7 @@
           <div></div>
         </div>
         <button
-          class="px-[30px] py-[21px] mt-[62px] rounded-xl border border-[#1DD100] text-[#1DD100] text-xl font-bold font_two"
+          class="px-[30px] py-[21px] mt-[62px] rounded-xl border border-[#1DD100] text-[#1DD100] text-xl font-bold font_two hover:bg-[#1DD100] hover:text-white transition"
         >
           See All Offers
         </button>
@@ -276,7 +280,7 @@
       <!-- PARIBAHAN SECTION  -->
       <section
         id="paribahan"
-        class="w-full border-t-[2px] border-[#1DD100] rounded-[88px] mt-[120px] bg-[#F7F8F8] flex flex-col items-center"
+        class="w-full border-t-[2px] border-[#1DD100] rounded-t-[88px] mt-[120px] bg-[#F7F8F8] flex flex-col items-center"
       >
         <h1 class="mt-[120px] font_two text-[40px] font-bold text-[#030712]">
           FlixBus
@@ -306,7 +310,7 @@
                 </div>
               </div>
               <button
-                class="btn font_one text-lg font-medium flex gap-2 rounded-xl text-[#1DD100] items-center justify-center"
+                class="btn font_one text-lg font-medium flex gap-2 rounded-xl text-[#1DD100] items-center justify-center border hover:border-[#1DD100] transition"
               >
                 <img src="./assets/seat-green-filled.png" alt="" />
                 <span id="availableSeat">40</span> Seats left
@@ -827,7 +831,7 @@
                   />
                   <button
                     id="apply"
-                    class="text-base font-semibold py-[10px] px-[18px] rounded-lg my-2 text-white bg-[#1DD100]"
+                    class="text-base font-semibold py-[10px] px-[18px] rounded-lg my-2 text-white bg-[#1DD100] hover:bg-[#1cd100cc] transition"
                   >
                     Apply
                   </button>
@@ -892,7 +896,7 @@
               <button
                 id="inputButton"
                 onclick="handleInput()"
-                class="px-[30px] py-[21px] w-full text-white bg-[#1DD100] font_two text-xl font-extrabold rounded-2xl"
+                class="px-[30px] py-[21px] w-full text-white bg-[#1DD100] font_two text-xl font-extrabold rounded-2xl hover:bg-[#1cd100cc] transition"
               >
                 Next
               </button>
@@ -917,7 +921,6 @@
       <!-- MODAL SECTION  -->
       <section>
         <!-- Open the modal using ID.showModal() method -->
-
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
           <div
             class="w-[718px] h-[481px] flex flex-col items-center justify-center bg-white rounded-2xl"
@@ -939,11 +942,13 @@
             <div class="modal-action">
               <form method="dialog">
                 <!-- if there is a button in form, it will close the modal -->
-                <button
+                <a
+                  href="#flixBus"
+                  id="continueBtn"
                   class="bg-[#27AE60] text-white rounded-[32px] px-[104px] py-[15px] text-xl font-semibold font_three"
                 >
                   Continue
-                </button>
+                </a>
               </form>
             </div>
           </div>

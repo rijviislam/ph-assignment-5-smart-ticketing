@@ -82,6 +82,7 @@ applyBtn.addEventListener("click", () => {
       grandTotalPrice.innerText = totalGrandPrice;
       inputApply.classList.add("hidden");
     } else {
+      input.value = "";
       return alert("Invalid coupon code");
     }
   } else {
@@ -101,12 +102,6 @@ function handleInput() {
     const inputNumVal = inputNum.value;
     if (inputNumVal.length == 11) {
       my_modal_5.showModal();
-      inputName.value = "";
-      inputNum.value = "";
-      inputEmail.value = "";
-      inputButton.classList.remove("bg-[#1DD100]");
-      inputButton.classList.add("disabled");
-      inputButton.setAttribute("disabled", "true");
     } else {
       return alert("Invalid Phone Number");
     }
@@ -114,3 +109,8 @@ function handleInput() {
     return alert("You neet to select one seat");
   }
 }
+
+const continueBtn = document.getElementById("continueBtn");
+continueBtn.addEventListener("click", () => {
+  window.location.reload();
+});
